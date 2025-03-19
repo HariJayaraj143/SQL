@@ -1,0 +1,44 @@
+1.Inner Join
+
+Definition: Returns only the matching records from both tables where the condition is met.
+
+Example:SELECT Employees.ID, Employees.Name, Departments.DeptName
+FROM Employees
+INNER JOIN Departments ON Employees.DeptID = Departments.DeptID;
+
+2.Left Join
+Definition:InLEFT JOIN, for each row in the left table, matched rows from the right table are combined. 
+If there is no match, NULL values are assigned to the right half of the rows in the temporary table.
+
+Example:SELECT Employees.ID, Employees.Name, Departments.DeptName
+FROM Employees
+LEFT JOIN Departments ON Employees.DeptID = Departments.DeptID;
+
+3.Right Join
+Definition:InLEFT JOIN, for each row in the left table, matched rows from the right table are combined. 
+If there is no match, NULL values are assigned to the right half of the rows in the temporary table.
+
+Example:SELECT Employees.ID, Employees.Name, Departments.DeptName
+FROM Employees
+RIGHT JOIN Departments ON Employees.DeptID = Departments.DeptID;
+
+4.Cross Join
+Definition: Returns the Cartesian product of both tables (every row from Table A is combined with every row from Table B).
+
+Example:SELECT Employees.Name, Departments.DeptName
+FROM Employees
+CROSS JOIN Departments;
+
+5.Full Join
+Definition: Returns all records from both tables, with NULLs where there is no match.
+
+Example:SELECT Employees.ID, Employees.Name, Departments.DeptName
+FROM Employees
+FULL JOIN Departments ON Employees.DeptID = Departments.DeptID;
+
+6.Self Join
+Definition: Joins a table with itself to find relationships within the same table.
+
+Example:SELECT E1.Name AS Employee, E2.Name AS Manager
+FROM Employees E1
+JOIN Employees E2 ON E1.ManagerID = E2.ID;
